@@ -1,14 +1,16 @@
+// Declaring variables
 let words = ["Rock", "Paper", "Scissors"];
 let playerScore = 0;
 let computerScore = 0;
 
+//Initializing the random choice of a computer
 function getComputerChoice() {
     let number = Math.floor(Math.random() * words.length);
     let word = words[number];
     return word;
 }
 
-
+//Setting up the logic of every round
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Scissors" && computerSelection === "Paper") {
         return (`"You win! Scissors beats Paper! You get ${playerScore += 1} point!"`);
@@ -28,6 +30,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+//Setting up the results
 function roundResult(playerScore, computerScore) {
     if (playerScore == 3 || computerScore == 3) {
         if (playerScore > computerScore) {
@@ -38,6 +41,7 @@ function roundResult(playerScore, computerScore) {
     }
 }
 
+//Testing for now, because prompt does not work in Chrome...
 const playerSelection = "Scissors";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
